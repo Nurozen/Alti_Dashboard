@@ -14,4 +14,4 @@ RUN pip3 install -r /root/requirements.txt
 EXPOSE 5005:5005
 
 #Startup
-CMD [ "python3", "-m" , "flask", "--app", "/root/src/app", "run", "--port=5005","--host=0.0.0.0"]
+CMD [ "python3", "-m" , "flask", "--app", "/home/runner/work/Alti_Dashboard/Alti_Dashboard", "run", "--port=5005","--host=0.0.0.0"]
