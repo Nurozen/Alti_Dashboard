@@ -15,4 +15,5 @@ import requests
 
     assert response.text == 'Input: test'"""
 
-assert 'Input: test' == 'Input: test'
+def test_tests():
+    assert 'Input: test' == 'Input: test'
