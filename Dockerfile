@@ -5,6 +5,7 @@ WORKDIR /root
 #Copys
 COPY ./src /root/src/
 COPY ./requirements.txt /root/requirements.txt
+COPY ./tests /root/tests/
 
 #Runs
 RUN pip3 install -r /root/requirements.txt
