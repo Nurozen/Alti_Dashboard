@@ -13,7 +13,7 @@ def test_new_entry():
 
     print(response.text)
 
-    assert type(response.text) == '<class ‘string‘>'
+    assert type(response.text) == "<class ‘string‘>"
 
 def test_tests():
     assert 'Input: test' == 'Input: test'
