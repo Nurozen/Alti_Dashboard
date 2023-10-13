@@ -1,9 +1,9 @@
 import requests
 
-"""def test_user_input():
-    url = "http://127.0.0.1:5005/user_input"
+def test_new_entry():
+    url = "http://127.0.0.1:5005/new"
 
-    payload = {'input': 'test'}
+    payload = {}
     files=[
 
     ]
@@ -13,7 +13,7 @@ import requests
 
     print(response.text)
 
-    assert response.text == 'Input: test'"""
+    assert type(response.text) == '<class ‘string‘>'
 
 def test_tests():
     assert 'Input: test' == 'Input: test'
