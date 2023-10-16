@@ -16,5 +16,5 @@ RUN sh /root/rabbit_install_script.sh
 EXPOSE 5005:5005
 
 #Startup
-CMD [ "python3", "-m" , "flask", "--app", "/home/runner/work/Alti_Dashboard/Alti_Dashboard", "run", "--port=5005","--host=0.0.0.0"]
-#CMD [ "python3", "/root/src/app.py"]
+#CMD [ "python3", "-m" , "flask", "--app", "/home/runner/work/Alti_Dashboard/Alti_Dashboard", "run", "--port=5005","--host=0.0.0.0"]
+CMD [ "python3", "/root/src/app.py"]
