@@ -101,6 +101,17 @@ def new():
          logging.info(f"{rand_int} added to db")
    return (f"Added: {rand_int} to queue")
 
+@app.route("/")
+def landing():
+   return """
+         <ol>
+            <li><a href="https://seashell-app-j7l2s.ondigitalocean.app/form">The /form page</a> will allow you to name your graph.</li>
+            <li><a href="https://seashell-app-j7l2s.ondigitalocean.app/new">The /new page</a> allows adding new mock data to the queue, which will be pushed to the db. <br> Refresh the /new page several times to generate ample data.</li>
+            <li><a href="https://seashell-app-j7l2s.ondigitalocean.app/analysis">The /analysis page</a> allows viewing of the mock data in graph form. </li>
+         </ol>
+          """
+
+
 @app.route("/form")
 def home():
     return """
