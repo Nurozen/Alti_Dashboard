@@ -133,7 +133,7 @@ if __name__ == '__main__':
    try:
       with app.app_context():
          db.create_all()
-      app.run(debug = False, port=5556, host="0.0.0.0")
+      #app.run(debug = False, port=5556, host="0.0.0.0")
    except KeyboardInterrupt:
         print('Interrupted')
         try:
