@@ -137,7 +137,7 @@ if __name__ == '__main__':
    except KeyboardInterrupt:
         print('Interrupted')
         try:
-            receiver.interrupt()
+            #receiver.interrupt()
             sys.exit(0)
         except SystemExit:
             os._exit(0)
