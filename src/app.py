@@ -21,7 +21,7 @@ db = SQLAlchemy(app)
 
 name = "<users>"
 
-def rabbit_receiver(self):
+"""def rabbit_receiver(self):
     global db
     connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
     channel = connection.channel()
@@ -43,7 +43,7 @@ def rabbit_receiver(self):
     logging.info('Waiting for messages...')
     channel.start_consuming()
 receiver = threading.Thread(target=rabbit_receiver, args=(1,))
-receiver.start()
+receiver.start()"""
 
 
 class Randonee(db.Model):
@@ -81,7 +81,7 @@ def health_check():
 @app.route('/new', methods = ['GET'])
 def new():
    rand_int=str(random.randint(0, 99))
-   connection = pika.BlockingConnection(
+   """connection = pika.BlockingConnection(
    pika.ConnectionParameters(host='localhost'))
    channel = connection.channel()
 
@@ -90,6 +90,15 @@ def new():
    channel.basic_publish(exchange='', routing_key='telemetry', body=rand_int)
    print(" [x] Sent 'Telemetry Sent'")
    connection.close()
+   return (f"Added: {rand_int} to queue")"""
+
+   with app.app_context():
+         logging.info(f" [x] Received {rand_int}")
+         randonee = Randonee(rand_int)
+         
+         db.session.add(randonee)
+         db.session.commit()
+         logging.info(f"{rand_int} added to db")
    return (f"Added: {rand_int} to queue")
 
 @app.route("/form")
